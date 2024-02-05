@@ -1,0 +1,92 @@
+{
+  "name": "header-refactor-vsce",
+  "displayName": "Header Files Refactor",
+  "description": "Automatically refactors #include directives in C and C++ projects when files or directories are moved or renamed.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.57.0"
+  },
+  "publisher": "Suvius",
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OddSuvius/Header-Files-Refactor/issues"
+  },
+  "keywords": [
+    "C",
+    "C++",
+    "include",
+    "refactor",
+    "header files",
+    "code organization",
+    "code maintenance",
+    "multi-root ready"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OddSuvius/Header-Files-Refactor"
+  },
+  "homepage": "https://github.com/OddSuvius/Header-Files-Refactor",
+  "activationEvents": [
+    "onFileSystem:*",
+    "workspaceContains:**/*.c",
+    "workspaceContains:**/*.cpp",
+    "workspaceContains:**/*.h",
+    "workspaceContains:**/*.hpp"
+  ]
+  ,
+  "main": "./out/extension.js",
+  "icon": "images/icon.png",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Header Files Refactor",
+        "properties": {
+          "HeaderFilesRefactor.excludeDirs": {
+            "type": "array",
+            "default": [
+              "external",
+              "externals",
+              "third_party",
+              "third_parties"
+            ],
+            "description": "Directories to exclude from scanning during refactoring."
+          },
+          "HeaderFilesRefactor.removeFolderFromPath": {
+            "type": "array",
+            "default": [
+              "src",
+              "inc",
+              "include"
+            ],
+            "description": "Directories to be omitted from the '#include' paths during refactoring."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc --watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext .ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^16.0.0",
+    "@types/vscode": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.30.0",
+    "glob": "^7.1.7",
+    "mocha": "^9.0.0",
+    "typescript": "^4.3.5",
+    "vscode-test": "^1.6.0"
+  }
+}
