@@ -12,11 +12,11 @@ Header Files Refactor, an extension to seamlessly handle include directive refac
 
 ## Configurable Extension Settings
 
-### Exclude Directories (`cppIncludeRefactor.excludeDirs`)
+### Exclude Directories (`HeaderFilesRefactor.excludeDirs`)
 
 Specify directories that the extension should bypass during the refactoring process. This is particularly handy for excluding external libraries or generated code directories that do not necessitate or should not undergo refactoring.
 
-### Remove Directories from Path (`cppIncludeRefactor.removeFolderFromPath`)
+### Remove Directories from Path (`HeaderFilesRefactor.removeFolderFromPath`)
 
 Define directories that should be omitted from the beginning of a path in include directives. This feature supports cleaner and more concise include paths, particularly beneficial for projects utilizing common base directories for header files.
 
