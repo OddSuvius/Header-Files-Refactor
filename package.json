@@ -2,7 +2,7 @@
   "name": "header-refactor-vsce",
   "displayName": "Header Files Refactor",
   "description": "Automatically refactors #include directives in C and C++ projects when files or directories are moved or renamed.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.57.0"
   },
